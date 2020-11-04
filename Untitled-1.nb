@@ -1,0 +1,754 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24630,        746]
+NotebookOptionsPosition[     22855,        683]
+NotebookOutlinePosition[     23202,        698]
+CellTagsIndexPosition[     23159,        695]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     RowBox[{"3", 
+      RowBox[{"Log", "[", "n", "]"}]}], "-", 
+     RowBox[{"2", 
+      RowBox[{"Log", "[", 
+       RowBox[{"Log", "[", "n", "]"}], "]"}]}]}], 
+    RowBox[{"Log", "[", "n", "]"}]], ",", 
+   RowBox[{"n", "\[Rule]", " ", "\[Infinity]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"Log", "[", 
+     RowBox[{"Log", "[", "n", "]"}], "]"}], 
+    RowBox[{"Log", "[", "n", "]"}]], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "0", ",", 
+     SuperscriptBox["10", "100"]}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.1"}], ",", "0.1"}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.746495789395707*^9, 3.746495789888609*^9}, {
+  3.746495920089526*^9, 3.7464959888006983`*^9}, {3.746519537024647*^9, 
+  3.746519621470398*^9}, {3.7465196911133957`*^9, 3.74652043969403*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{{3.7465196172239676`*^9, 3.7465196276768217`*^9}, {
+   3.7465196948888817`*^9, 3.746519734928644*^9}, {3.746519777661089*^9, 
+   3.746519790895629*^9}, {3.746519829008027*^9, 3.746519931240392*^9}, {
+   3.746519966674041*^9, 3.7465201153952227`*^9}, 3.746520148137275*^9, {
+   3.746520188631418*^9, 3.74652044093193*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+      1.], LineBox[CompressedData["
+1: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
+       "]]},
+     Annotation[#, "Charting`Private`Tag$21553#1"]& ]}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 9.999999795918367*^99}, {-0.1, 0.1}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.7465196172239676`*^9, 3.7465196276768217`*^9}, {
+   3.7465196948888817`*^9, 3.746519734928644*^9}, {3.746519777661089*^9, 
+   3.746519790895629*^9}, {3.746519829008027*^9, 3.746519931240392*^9}, {
+   3.746519966674041*^9, 3.7465201153952227`*^9}, 3.746520148137275*^9, {
+   3.746520188631418*^9, 3.7465204409868164`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.746519924049982*^9, 3.7465199253537817`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7465198831339293`*^9, 3.746519886075056*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Exists]", 
+   RowBox[{"m", ">", "0"}]}], " ", ",", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"\[Exists]", " ", 
+     RowBox[{"c", " ", ">", "0"}]}], ",", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[ForAll]", 
+       RowBox[{"n", ">", "m"}]}], ",", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["cn", 
+         FractionBox["1", "2"]], "\[GreaterEqual]", " ", 
+        RowBox[{"Log", "[", "n", "]"}]}], ")"}]}], ")"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.7464960049482465`*^9, 3.746496028760704*^9}, {
+  3.746496080480449*^9, 3.7464962105857506`*^9}, {3.7465188507171116`*^9, 
+  3.7465189242606373`*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Syntax","tsntxi",
+   "\"\\\"\\!\\(\\*RowBox[{RowBox[{\\\"\[Exists]\\\", RowBox[{\\\"m\\\", \
+\\\">\\\", \\\"0\\\"}]}], \\\",\\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"\
+\[Exists]\\\", RowBox[{\\\"c\\\", \\\">\\\", \\\"0\\\"}]}], \\\",\\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"\[ForAll]\\\", RowBox[{\\\"n\\\", \
+\\\">\\\", \\\"m\\\"}]}], \\\",\\\", RowBox[{\\\"(\\\", \
+RowBox[{SuperscriptBox[\\\"cn\\\", FractionBox[\\\"1\\\", \\\"2\\\"]], \\\"\
+\[GreaterEqual]\\\", RowBox[{\\\"Log\\\", \\\"[\\\", \\\"n\\\", \
+\\\"]\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}], \\\")\\\"}]}]\\)\\\" is \
+incomplete; more input is \
+needed.\\!\\(\\*RowBox[{\\\"\\\\\\\"\\\\\\\"\\\"}]\\)\"",2,2,3,
+   22042750760471256316,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7465189356053123`*^9, 3.746518981041542*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Exists", "[", 
+  RowBox[{"m", ",", 
+   RowBox[{
+    RowBox[{"m", ">", "0"}], "\[And]", 
+    RowBox[{"Exists", "[", 
+     RowBox[{"c", ",", 
+      RowBox[{
+       RowBox[{"c", ">", "0"}], "\[And]", 
+       RowBox[{"ForAll", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{
+          RowBox[{"n", ">", "l"}], "\[Implies]", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["cn", 
+             FractionBox["1", "2"]], "\[GreaterEqual]", " ", 
+            RowBox[{"Log", "[", "n", "]"}]}], ")"}]}]}], "]"}]}]}], "]"}]}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.746518994517891*^9, 3.7465190823054543`*^9}, {
+  3.746519114756874*^9, 3.746519320701193*^9}, {3.7465194338456745`*^9, 
+  3.7465194684940863`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Exists]", "m"], 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"m", ">", "0"}], "&&", 
+    RowBox[{
+     SubscriptBox["\[Exists]", "c"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", ">", "0"}], "&&", 
+       RowBox[{
+        SubscriptBox["\[ForAll]", "n"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"n", ">", "l"}], "\[Implies]", 
+          RowBox[{
+           RowBox[{"c", 
+            SqrtBox["n"]}], "\[GreaterEqual]", 
+           RowBox[{"Log", "[", "n", "]"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]],\
+ "Input",
+ CellChangeTimes->{{3.7467411836588593`*^9, 3.746741188904537*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{"Exists", "[", 
+   RowBox[{"m", ",", 
+    RowBox[{"m", ">", "0"}], ",", 
+    RowBox[{"Exists", "[", 
+     RowBox[{"c", ",", 
+      RowBox[{"c", ">", "0"}], ",", 
+      RowBox[{"ForAll", "[", 
+       RowBox[{"n", ",", 
+        RowBox[{"n", ">", "m"}], ",", 
+        RowBox[{
+         RowBox[{"c", 
+          RowBox[{"(", 
+           SuperscriptBox["n", 
+            FractionBox["1", "2"]], ")"}]}], "\[GreaterEqual]", " ", 
+         RowBox[{"Log", "[", "n", "]"}]}]}], "]"}]}], "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.746741200896939*^9, 3.7467412138783693`*^9}, {
+  3.746741478054015*^9, 3.74674148918295*^9}, {3.7467420525190353`*^9, 
+  3.746742053455464*^9}},
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Reduce","nsmet",
+   "\"This system cannot be solved with the methods available to Reduce.\"",2,
+   11,8,22044357644267989774,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7465193311946325`*^9, 3.7465193828760977`*^9, {3.746519445385894*^9, 
+   3.746519472859048*^9}, 3.746741217261508*^9, 3.746741491040262*^9, 
+   3.746742091346449*^9, 3.7467421246207123`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   SubscriptBox["\[Exists]", 
+    RowBox[{"m", ",", 
+     RowBox[{"m", ">", "0"}]}]], 
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{"c", ",", 
+      RowBox[{"c", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[ForAll]", 
+      RowBox[{"n", ",", 
+       RowBox[{"n", ">", "m"}]}]], 
+     RowBox[{
+      RowBox[{"c", " ", 
+       SqrtBox["n"]}], "\[GreaterEqual]", 
+      RowBox[{"Log", "[", "n", "]"}]}]}]}]}], "]"}]], "Output",
+ CellChangeTimes->{3.7467420913499317`*^9, 3.7467421246486535`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Resolve", "[", 
+  RowBox[{
+   SubscriptBox["\[Exists]", 
+    RowBox[{"m", ",", 
+     RowBox[{"m", ">", "0"}]}]], 
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{"c", ",", 
+      RowBox[{"c", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[ForAll]", 
+      RowBox[{"n", ",", 
+       RowBox[{"n", ">", "m"}]}]], 
+     RowBox[{
+      RowBox[{"c", " ", 
+       SqrtBox["n"]}], "\[GreaterEqual]", 
+      RowBox[{"Log", "[", "n", "]"}]}]}]}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.7467415020563335`*^9, {3.746741998092306*^9, 3.746742013396556*^9}, 
+   3.7467421386895714`*^9, {3.7467421950715227`*^9, 3.7467422043468494`*^9}, {
+   3.7467423248112516`*^9, 3.746742333771016*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Exists]", 
+   RowBox[{
+    RowBox[{"{", "m", "}"}], ",", 
+    RowBox[{"m", ">", "0"}]}]], 
+  RowBox[{
+   SubscriptBox["\[Exists]", 
+    RowBox[{
+     RowBox[{"{", "c", "}"}], ",", 
+     RowBox[{"c", ">", "0"}]}]], 
+   RowBox[{
+    SubscriptBox["\[ForAll]", 
+     RowBox[{
+      RowBox[{"{", "n", "}"}], ",", 
+      RowBox[{"n", ">", "m"}]}]], 
+    RowBox[{
+     RowBox[{"c", " ", 
+      SqrtBox["n"]}], "\[GreaterEqual]", 
+     RowBox[{"Log", "[", "n", "]"}]}]}]}]}]], "Output",
+ CellChangeTimes->{
+  3.7467415023296013`*^9, {3.746741999808649*^9, 3.746742015500183*^9}, 
+   3.7467420973167377`*^9, 3.746742144659094*^9, {3.7467421834966164`*^9, 
+   3.746742205587034*^9}, 3.746742335030198*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Resolve", "[", 
+  RowBox[{
+   SubscriptBox["\[Exists]", 
+    RowBox[{
+     RowBox[{"{", "m", "}"}], ",", 
+     RowBox[{"m", ">", "0"}]}]], 
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "c", "}"}], ",", 
+      RowBox[{"c", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[ForAll]", 
+      RowBox[{
+       RowBox[{"{", "n", "}"}], ",", 
+       RowBox[{"n", ">", "m"}]}]], 
+     RowBox[{
+      RowBox[{"c", " ", 
+       SqrtBox["n"]}], "\[GreaterEqual]", 
+      RowBox[{"Log", "[", "n", "]"}]}]}]}]}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Exists]", 
+   RowBox[{
+    RowBox[{"{", "m", "}"}], ",", 
+    RowBox[{"m", ">", "0"}]}]], 
+  RowBox[{
+   SubscriptBox["\[Exists]", 
+    RowBox[{
+     RowBox[{"{", "c", "}"}], ",", 
+     RowBox[{"c", ">", "0"}]}]], 
+   RowBox[{
+    SubscriptBox["\[ForAll]", 
+     RowBox[{
+      RowBox[{"{", "n", "}"}], ",", 
+      RowBox[{"n", ">", "m"}]}]], 
+    RowBox[{
+     RowBox[{"c", " ", 
+      SqrtBox["n"]}], "\[GreaterEqual]", 
+     RowBox[{"Log", "[", "n", "]"}]}]}]}]}]], "Output",
+ CellChangeTimes->{{3.7467423406147337`*^9, 3.7467423596798153`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "m", "}"}], ",", 
+      RowBox[{"m", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[Exists]", 
+      RowBox[{
+       RowBox[{"{", "c", "}"}], ",", 
+       RowBox[{"c", ">", "0"}]}]], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "n", "}"}], ",", 
+        RowBox[{"n", ">", "m"}]}]], 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SqrtBox["n"]}], "\[GreaterEqual]", 
+       RowBox[{"Log", "[", "n", "]"}]}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}]}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindInstance","cpow",
+   "\"\\!\\(\\*RowBox[{\\\"FindInstance\\\"}]\\) was unable to prove that a \
+radical of an expression containing only real variables and parameters is \
+real valued. If you are interested only in solutions for which all radicals \
+contained in the input are real valued, use \\!\\(\\*RowBox[{\\\"FindInstance\
+\\\"}]\\) with domain argument Reals.\"",2,19,12,22044357644267989774,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.74674235198637*^9}],
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "m", "}"}], ",", 
+      RowBox[{"m", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[Exists]", 
+      RowBox[{
+       RowBox[{"{", "c", "}"}], ",", 
+       RowBox[{"c", ">", "0"}]}]], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "n", "}"}], ",", 
+        RowBox[{"n", ">", "m"}]}]], 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SqrtBox["n"]}], "\[GreaterEqual]", 
+       RowBox[{"Log", "[", "n", "]"}]}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.7467423519893613`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "m", "}"}], ",", 
+      RowBox[{"m", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[Exists]", 
+      RowBox[{
+       RowBox[{"{", "c", "}"}], ",", 
+       RowBox[{"c", ">", "0"}]}]], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "n", "}"}], ",", 
+        RowBox[{"n", ">", "m"}]}]], 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SqrtBox["n"]}], "\[GreaterEqual]", 
+       RowBox[{"Log", "[", "n", "]"}]}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}], ",", "Reals"}], "]"}]], "Input",
+ CellChangeTimes->{{3.746742159226699*^9, 3.7467421611449184`*^9}},
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindInstance","nsmet",
+   "\"The methods available to FindInstance are insufficient to find the \
+requested instances or prove they do not exist.\"",2,14,10,
+   22044357644267989774,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.7467421506960783`*^9, 3.7467421659628305`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "m", "}"}], ",", 
+      RowBox[{"m", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[Exists]", 
+      RowBox[{
+       RowBox[{"{", "c", "}"}], ",", 
+       RowBox[{"c", ">", "0"}]}]], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "n", "}"}], ",", 
+        RowBox[{"n", ">", "m"}]}]], 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SqrtBox["n"]}], "\[GreaterEqual]", 
+       RowBox[{"Log", "[", "n", "]"}]}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}], ",", "Reals"}], "]"}]], "Output",
+ CellChangeTimes->{{3.7467421507000666`*^9, 3.74674216598143*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "m", "}"}], ",", 
+      RowBox[{"m", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[Exists]", 
+      RowBox[{
+       RowBox[{"{", "c", "}"}], ",", 
+       RowBox[{"c", ">", "0"}]}]], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "n", "}"}], ",", 
+        RowBox[{"n", ">", "l"}]}]], 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SqrtBox["n"]}], "\[GreaterEqual]", 
+       RowBox[{"Log", "[", "n", "]"}]}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "m", ",", "n"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.746742106294428*^9, 3.7467421067490225`*^9}},
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindInstance","cpow",
+   "\"\\!\\(\\*RowBox[{\\\"FindInstance\\\"}]\\) was unable to prove that a \
+radical of an expression containing only real variables and parameters is \
+real valued. If you are interested only in solutions for which all radicals \
+contained in the input are real valued, use \\!\\(\\*RowBox[{\\\"FindInstance\
+\\\"}]\\) with domain argument Reals.\"",2,8,6,22044357644267989774,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.746742024367379*^9}],
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Exists]", 
+     RowBox[{
+      RowBox[{"{", "m", "}"}], ",", 
+      RowBox[{"m", ">", "0"}]}]], 
+    RowBox[{
+     SubscriptBox["\[Exists]", 
+      RowBox[{
+       RowBox[{"{", "c", "}"}], ",", 
+       RowBox[{"c", ">", "0"}]}]], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "n", "}"}], ",", 
+        RowBox[{"n", ">", "l"}]}]], 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SqrtBox["n"]}], "\[GreaterEqual]", 
+       RowBox[{"Log", "[", "n", "]"}]}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"l", ",", "m", ",", "n"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.7467420243753576`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   SubscriptBox["\[Exists]", "m"], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"m", ">", "0"}], "&&", 
+     RowBox[{
+      SubscriptBox["\[Exists]", "c"], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"c", ">", "0"}], "&&", 
+        RowBox[{
+         SubscriptBox["\[ForAll]", "n"], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"n", ">", "l"}], "\[Implies]", 
+           RowBox[{
+            RowBox[{"c", " ", 
+             SqrtBox["n"]}], "\[GreaterEqual]", 
+            RowBox[{"Log", "[", "n", "]"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{3.746741226434414*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Reduce","nsmet",
+   "\"This system cannot be solved with the methods available to Reduce.\"",2,
+   4,4,22044357644267989774,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.746741226497247*^9, 3.7467414973118496`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   SubscriptBox["\[Exists]", "m"], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"m", ">", "0"}], "&&", 
+     RowBox[{
+      SubscriptBox["\[Exists]", "c"], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"c", ">", "0"}], "&&", 
+        RowBox[{
+         SubscriptBox["\[ForAll]", "n"], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"n", ">", "l"}], "\[Implies]", 
+           RowBox[{
+            RowBox[{"c", " ", 
+             SqrtBox["n"]}], "\[GreaterEqual]", 
+            RowBox[{"Log", "[", "n", "]"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}],
+   "]"}]], "Output",
+ CellChangeTimes->{3.7467412264992404`*^9, 3.74674149733177*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   SuperscriptBox["n", 
+    FractionBox["1", "2"]], ",", 
+   RowBox[{"n", "\[Rule]", " ", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7467425174465857`*^9, 3.746742562447466*^9}, {
+  3.746743258317643*^9, 3.7467432974275723`*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{
+  3.746742564817568*^9, {3.746743277675254*^9, 3.7467432989439087`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7467438134267874`*^9, 3.7467438154853745`*^9}}]
+},
+WindowSize->{1920, 1037},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1008, 29, 118, "Input"],
+Cell[1591, 53, 369, 5, 30, "Output"],
+Cell[1963, 60, 5032, 94, 227, "Output"]
+}, Open  ]],
+Cell[7010, 157, 94, 1, 30, "Input"],
+Cell[7107, 160, 94, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[7226, 165, 695, 20, 47, "Input"],
+Cell[7924, 187, 855, 15, 45, "Message"]
+}, Open  ]],
+Cell[8794, 205, 756, 21, 47, "Input"],
+Cell[9553, 228, 643, 21, 42, "Input"],
+Cell[CellGroupData[{
+Cell[10221, 253, 749, 21, 47, "Input"],
+Cell[10973, 276, 422, 9, 21, "Message"],
+Cell[11398, 287, 558, 18, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11993, 310, 713, 21, 42, "Input"],
+Cell[12709, 333, 737, 23, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13483, 361, 592, 21, 42, "Input"],
+Cell[14078, 384, 590, 20, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14705, 409, 688, 24, 42, "Input"],
+Cell[15396, 435, 526, 9, 21, "Message"],
+Cell[15925, 446, 712, 24, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16674, 475, 770, 25, 42, "Input"],
+Cell[17447, 502, 334, 7, 21, "Message"],
+Cell[17784, 511, 749, 24, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18570, 540, 766, 25, 42, "Input"],
+Cell[19339, 567, 525, 9, 21, "Message"],
+Cell[19867, 578, 722, 24, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20626, 607, 674, 22, 42, "Input"],
+Cell[21303, 631, 272, 6, 21, "Message"],
+Cell[21578, 639, 698, 22, 37, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22313, 666, 293, 7, 45, "Input"],
+Cell[22609, 675, 131, 2, 30, "Output"]
+}, Open  ]],
+Cell[22755, 680, 96, 1, 30, "Input"]
+}
+]
+*)
+

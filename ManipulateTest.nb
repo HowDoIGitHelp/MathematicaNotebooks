@@ -1,0 +1,1839 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     66342,       1831]
+NotebookOptionsPosition[     65219,       1808]
+NotebookOutlinePosition[     65560,       1823]
+CellTagsIndexPosition[     65517,       1820]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Identity2", " ", "=", " ", 
+   RowBox[{"(", GridBox[{
+      {"1", "0"},
+      {"0", "1"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Identity3", " ", "=", " ", 
+   RowBox[{"(", GridBox[{
+      {"1", "0", "0"},
+      {"0", "1", "0"},
+      {"0", "0", "1"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Identity4", " ", "=", " ", 
+   RowBox[{"(", GridBox[{
+      {"1", "0", "0", "0"},
+      {"0", "1", "0", "0"},
+      {"0", "0", "1", "0"},
+      {"0", "0", "0", "1"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"origin", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeArrow", "[", "v_", "]"}], ":=", 
+  RowBox[{"Arrow", "[", 
+   RowBox[{"{", 
+    RowBox[{"origin", ",", "v"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeTArrow", "[", "v_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Opacity", "[", "0.2", "]"}], ",", 
+    RowBox[{"MakeArrow", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeT2Arrow", "[", "v_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Opacity", "[", "0.5", "]"}], ",", "Red", ",", 
+    RowBox[{"MakeArrow", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeColorArrow", "[", 
+   RowBox[{"c_", ",", "v_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{"c", ",", "Thick", ",", 
+    RowBox[{"MakeArrow", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AutoColorArrow", "[", "v_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"RGBColor", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"v", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "+", "5"}], ")"}], "/", "10"}], ",",
+       "0", ",", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"v", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "+", "5"}], ")"}], "/", "10"}]}], 
+     "]"}], ",", 
+    RowBox[{"MakeArrow", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakePoint", "[", "v_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+    RowBox[{"Point", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeGrid", "[", "v_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"v", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", 
+          RowBox[{"-", "10"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"v", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", "10"}], "}"}]}], "}"}], "]"}],
+      "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "10"}], ",", 
+          RowBox[{"v", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"10", ",", 
+          RowBox[{"v", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "}"}], "]"}], "}"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v1", " ", "=", " ", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"-", "0.5"}]},
+      {
+       RowBox[{"-", "1"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v2", "=", 
+   RowBox[{"(", GridBox[{
+      {"1"},
+      {"2"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v3", " ", "=", " ", 
+   RowBox[{"(", GridBox[{
+      {"2"},
+      {"0.5"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "[", "v_", "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Transpose", "[", "v", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RenderVectors", "[", 
+    RowBox[{"vlist_", ",", 
+     RowBox[{"plotrange_:", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"MakeColorArrow", "[", 
+         RowBox[{
+          RowBox[{"RGBColor", "[", 
+           RowBox[{
+            RowBox[{"RandomReal", "[", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0.7"}], "}"}], "]"}], ",", 
+            RowBox[{"RandomReal", "[", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0.7"}], "}"}], "]"}], ",", 
+            RowBox[{"RandomReal", "[", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0.7"}], "}"}], "]"}]}], "]"}], ",", 
+          RowBox[{"T", "[", "#", "]"}]}], "]"}], "&"}], ",", "vlist"}], "]"}],
+      ",", 
+     RowBox[{"Axes", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"origin3d", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Make3dArrow", "[", "v_", "]"}], ":=", 
+  RowBox[{"Arrow", "[", 
+   RowBox[{"Tube", "[", 
+    RowBox[{"{", 
+     RowBox[{"origin3d", ",", "v"}], "}"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Make3dColorArrow", "[", 
+   RowBox[{"c_", ",", "v_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Opacity", "[", "0.5", "]"}], ",", "c", ",", "Thick", ",", 
+    RowBox[{"Make3dArrow", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Make3dPoint", "[", "v_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+    RowBox[{"Point", "[", "v", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RenderVectors3d", "[", 
+   RowBox[{"vlist_", ",", 
+    RowBox[{"plotrange_:", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Make3dColorArrow", "[", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{
+           RowBox[{"RandomReal", "[", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0.7"}], "}"}], "]"}], ",", 
+           RowBox[{"RandomReal", "[", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0.7"}], "}"}], "]"}], ",", 
+           RowBox[{"RandomReal", "[", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0.7"}], "}"}], "]"}]}], "]"}], ",", 
+         RowBox[{"T", "[", "#", "]"}]}], "]"}], "&"}], ",", "vlist"}], "]"}], 
+    ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"redRGB", "=", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"blueRGB", "=", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"greenRGB", "=", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ColorAdd", "[", 
+   RowBox[{"c1_", ",", "c2_"}], "]"}], ":=", 
+  RowBox[{"RGBColor", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"c1", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "+", 
+        RowBox[{
+         RowBox[{"c2", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", "2"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"c1", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "+", 
+        RowBox[{
+         RowBox[{"c2", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "/", "2"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"c1", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "3", "]"}], "]"}], "+", 
+        RowBox[{
+         RowBox[{"c2", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], ")"}], "/", "2"}]}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"VectorAddRender", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", 
+    RowBox[{"plotrange_:", "Automatic"}]}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"MakeColorArrow", "[", 
+       RowBox[{"redRGB", ",", 
+        RowBox[{"T", "[", "v1", "]"}]}], "]"}], ",", 
+      RowBox[{"MakeColorArrow", "[", 
+       RowBox[{"blueRGB", ",", 
+        RowBox[{"T", "[", "v2", "]"}]}], "]"}], ",", 
+      RowBox[{"MakeColorArrow", "[", 
+       RowBox[{
+        RowBox[{"ColorAdd", "[", 
+         RowBox[{"redRGB", ",", "blueRGB"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"T", "[", "v1", "]"}], "+", 
+         RowBox[{"T", "[", "v2", "]"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"blueRGB", ",", "Dashed", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v1", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"redRGB", ",", "Dashed", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v2", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}]}], "}"}], "]"}]}], "}"}]}], "}"}],
+     ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"VectorAddRender3d", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", 
+    RowBox[{"plotrange_:", "Automatic"}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"redRGB", ",", 
+        RowBox[{"T", "[", "v1", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"blueRGB", ",", 
+        RowBox[{"T", "[", "v2", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{
+        RowBox[{"ColorAdd", "[", 
+         RowBox[{"redRGB", ",", "blueRGB"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"T", "[", "v1", "]"}], "+", 
+         RowBox[{"T", "[", "v2", "]"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"blueRGB", ",", "Dashed", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v1", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"redRGB", ",", "Dashed", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v2", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}]}], "}"}], "]"}]}], "}"}]}], "}"}],
+     ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", "origin3d"}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RenderVectors3dRed", "[", 
+   RowBox[{"vlist_", ",", 
+    RowBox[{"plotrange_:", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Make3dColorArrow", "[", 
+        RowBox[{"Red", ",", 
+         RowBox[{"T", "[", "#", "]"}]}], "]"}], "&"}], ",", "vlist"}], "]"}], 
+    ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RenderVectorsRed", "[", 
+   RowBox[{"vlist_", ",", 
+    RowBox[{"plotrange_:", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"MakeColorArrow", "[", 
+        RowBox[{"Red", ",", 
+         RowBox[{"T", "[", "#", "]"}]}], "]"}], "&"}], ",", "vlist"}], "]"}], 
+    ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BasisRender", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", 
+    RowBox[{"plotrange_:", "Automatic"}]}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"MakeColorArrow", "[", 
+       RowBox[{"redRGB", ",", 
+        RowBox[{"T", "[", "v1", "]"}]}], "]"}], ",", 
+      RowBox[{"MakeColorArrow", "[", 
+       RowBox[{"blueRGB", ",", 
+        RowBox[{"T", "[", "v2", "]"}]}], "]"}]}], "}"}], ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BasisRender3d", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", "v3_", ",", 
+    RowBox[{"plotrange_:", "Automatic"}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"Red", ",", 
+        RowBox[{"T", "[", "v1", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"Blue", ",", 
+        RowBox[{"T", "[", "v2", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"Green", ",", 
+        RowBox[{"T", "[", "v3", "]"}]}], "]"}]}], "}"}], ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"Boxed", "\[Rule]", " ", "False"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"VectorTripleAddRender3d", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", "v3_", ",", 
+    RowBox[{"plotrange_:", "Automatic"}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"redRGB", ",", 
+        RowBox[{"T", "[", "v1", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"blueRGB", ",", 
+        RowBox[{"T", "[", "v2", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"greenRGB", ",", 
+        RowBox[{"T", "[", "v3", "]"}]}], "]"}], ",", 
+      RowBox[{"Make3dColorArrow", "[", 
+       RowBox[{"Black", ",", 
+        RowBox[{
+         RowBox[{"T", "[", "v1", "]"}], "+", 
+         RowBox[{"T", "[", "v2", "]"}], "+", 
+         RowBox[{"T", "[", "v3", "]"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"redRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"T", "[", "v2", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"redRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v2", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"redRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v3", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"blueRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v1", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"blueRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"blueRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v3", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v2", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"greenRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v2", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"greenRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v1", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"greenRGB", ",", "Dashed", ",", "Thick", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"T", "[", "v2", "]"}], ",", 
+           RowBox[{
+            RowBox[{"T", "[", "v2", "]"}], "+", 
+            RowBox[{"T", "[", "v3", "]"}]}]}], "}"}], "]"}]}], "}"}]}], "}"}],
+     ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", "origin3d"}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeSpan", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", 
+    RowBox[{"spacing_:", "1"}]}], "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"i", " ", "v1"}], "+", 
+       RowBox[{"j", " ", "v2"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", 
+        RowBox[{"-", "5"}], ",", "5", ",", "spacing"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"-", "5"}], ",", "5", ",", "spacing"}], "}"}]}], "]"}], ",", 
+    "1"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RenderSpan", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", 
+    RowBox[{"plotrange_:", "Automatic"}]}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{"MakeArrow", ",", 
+        RowBox[{"MakeSpan", "[", 
+         RowBox[{
+          RowBox[{"T", "[", "v1", "]"}], ",", 
+          RowBox[{"T", "[", "v2", "]"}]}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", "Thick", ",", 
+          RowBox[{"Arrow", "[", 
+           RowBox[{"{", 
+            RowBox[{"origin", ",", 
+             RowBox[{"T", "[", "v1", "]"}]}], "}"}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", "Thick", ",", 
+          RowBox[{"Arrow", "[", 
+           RowBox[{"{", 
+            RowBox[{"origin", ",", 
+             RowBox[{"T", "[", "v2", "]"}]}], "}"}], "]"}]}], "}"}]}], 
+       "}"}]}], "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Make3dSpan", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", "v3_", ",", 
+    RowBox[{"spacing_:", "3"}]}], "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"i", " ", "v1"}], "+", 
+       RowBox[{"j", " ", "v2"}], "+", 
+       RowBox[{"k", " ", "v3"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", 
+        RowBox[{"-", "5"}], ",", "5", ",", "spacing"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", 
+        RowBox[{"-", "5"}], ",", "5", ",", "spacing"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", 
+        RowBox[{"-", "5"}], ",", "5", ",", "spacing"}], "}"}]}], "]"}], ",", 
+    "2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Render3dSpan", "[", 
+   RowBox[{"v1_", ",", "v2_", ",", "v3_", ",", 
+    RowBox[{"plotrange_:", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Opacity", "[", "0.4", "]"}], ",", 
+        RowBox[{"Map", "[", 
+         RowBox[{"Make3dArrow", ",", 
+          RowBox[{"Make3dSpan", "[", 
+           RowBox[{
+            RowBox[{"T", "[", "v1", "]"}], ",", 
+            RowBox[{"T", "[", "v2", "]"}], ",", 
+            RowBox[{"T", "[", "v3", "]"}]}], "]"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Opacity", "[", "1", "]"}], ",", "Red", ",", "Thick", ",", 
+          RowBox[{"Arrow", "[", 
+           RowBox[{"Tube", "[", 
+            RowBox[{"{", 
+             RowBox[{"origin3d", ",", 
+              RowBox[{"T", "[", "v1", "]"}]}], "}"}], "]"}], "]"}]}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Opacity", "[", "1", "]"}], ",", "Blue", ",", "Thick", ",", 
+          RowBox[{"Arrow", "[", 
+           RowBox[{"Tube", "[", 
+            RowBox[{"{", 
+             RowBox[{"origin3d", ",", 
+              RowBox[{"T", "[", "v2", "]"}]}], "}"}], "]"}], "]"}]}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Opacity", "[", "1", "]"}], ",", "Green", ",", "Thick", ",", 
+          RowBox[{"Arrow", "[", 
+           RowBox[{"Tube", "[", 
+            RowBox[{"{", 
+             RowBox[{"origin3d", ",", 
+              RowBox[{"T", "[", "v3", "]"}]}], "}"}], "]"}], "]"}]}], "}"}]}],
+        "}"}]}], "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "True"}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", "origin3d"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"identity", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rotate90", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hflip", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stretchx", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shrinkx", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stretchy", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stretchxy", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sheary", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shearx", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"shrink", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeTGrid", "[", 
+   RowBox[{"t_", ",", "v_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Opacity", "[", "0.01", "]"}], ",", "Thin", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"v", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"-", "10"}]}], "}"}]}], ",", 
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"v", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", "10"}], "}"}]}]}], "}"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Opacity", "[", "0.01", "]"}], ",", "Thin", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "10"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], ",", 
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}]}], "}"}], "]"}]}], 
+     "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MakeTGrid3d", "[", 
+   RowBox[{"t_", ",", "v_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Opacity", "[", "0.5", "]"}], ",", "Thin", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"v", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", 
+            RowBox[{"-", "10"}]}], "}"}]}], ",", 
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"v", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", "10"}], "}"}]}]}], "}"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Opacity", "[", "0.5", "]"}], ",", "Thin", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "10"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ",", 
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}]}], "}"}], "]"}]}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Opacity", "[", "0.5", "]"}], ",", "Thin", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"v", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"-", "10"}], ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ",", 
+         RowBox[{"t", ".", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"v", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", "10", ",", 
+            RowBox[{"v", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}]}], "}"}], "]"}]}], 
+     "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GridTransform", "[", 
+   RowBox[{"t_", ",", "b1_", ",", "b2_", ",", "vlist_", ",", "colors_", ",", 
+    RowBox[{"plotrange_:", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"MakeTGrid", "[", 
+          RowBox[{"t", ",", "#"}], "]"}], "&"}], ",", 
+        RowBox[{"MakeSpan", "[", 
+         RowBox[{"b1", ",", "b2"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"MakeColorArrow", "[", 
+         RowBox[{"Red", ",", 
+          RowBox[{"t", ".", "b1"}]}], "]"}], ",", 
+        RowBox[{"MakeColorArrow", "[", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"t", ".", "b2"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"MakeColorArrow", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"t", ".", "#2"}]}], "]"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"colors", ",", "vlist"}], "}"}]}], "]"}]}], "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", " ", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GridTransform3d", "[", 
+   RowBox[{
+   "t_", ",", "b1_", ",", "b2_", ",", "b3_", ",", "vlist_", ",", "colors_", 
+    ",", 
+    RowBox[{"plotrange_:", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"MakeTGrid3d", "[", 
+          RowBox[{"t", ",", "#"}], "]"}], "&"}], ",", 
+        RowBox[{"Make3dSpan", "[", 
+         RowBox[{"b1", ",", "b2", ",", "b3"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Make3dColorArrow", "[", 
+         RowBox[{"Red", ",", 
+          RowBox[{"t", ".", "b1"}]}], "]"}], ",", 
+        RowBox[{"Make3dColorArrow", "[", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"t", ".", "b2"}]}], "]"}], ",", 
+        RowBox[{"Make3dColorArrow", "[", 
+         RowBox[{"Green", ",", 
+          RowBox[{"t", ".", "b3"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Make3dColorArrow", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"t", ".", "#2"}]}], "]"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"colors", ",", "vlist"}], "}"}]}], "]"}]}], "]"}], ",", 
+    RowBox[{"Axes", "\[Rule]", " ", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "True", ",", "True"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "plotrange"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b1", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b2", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b3", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], ";"}], "\n", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"RenderVectors3dRed", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", 
+         RowBox[{"(", GridBox[{
+            {"3"},
+            {"0.5"},
+            {"0"}
+           }], ")"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "6"}], "}"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "\"\<scalar\>\""}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"RenderVectorsRed", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", 
+         RowBox[{"(", GridBox[{
+            {"3"},
+            {"0.5"}
+           }], ")"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "\"\<scalar\>\""}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "4"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"VectorAddRender", "[", 
+    RowBox[{
+     RowBox[{"a", 
+      RowBox[{"(", GridBox[{
+         {"1"},
+         {"0"}
+        }], ")"}]}], ",", 
+     RowBox[{"b", 
+      RowBox[{"(", GridBox[{
+         {"0"},
+         {"1"}
+        }], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1", ",", "\"\<ihat coef\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "1", ",", "\"\<jhat coef\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"VectorTripleAddRender3d", "[", 
+      RowBox[{
+       RowBox[{"a", 
+        RowBox[{"(", GridBox[{
+           {"1"},
+           {"0"},
+           {"0"}
+          }], ")"}]}], ",", 
+       RowBox[{"b", 
+        RowBox[{"(", GridBox[{
+           {"0"},
+           {"1"},
+           {"0"}
+          }], ")"}]}], ",", 
+       RowBox[{"c", 
+        RowBox[{"(", GridBox[{
+           {"0"},
+           {"0"},
+           {"1"}
+          }], ")"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1", ",", "\"\<ihat coef\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "1", ",", "\"\<jhat coef\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "1", ",", "\"\<khat coef\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"RenderSpan", "[", 
+      RowBox[{
+       RowBox[{"(", GridBox[{
+          {"a"},
+          {"c"}
+         }], ")"}], ",", 
+       RowBox[{"(", GridBox[{
+          {"b"},
+          {"d"}
+         }], ")"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1", ",", "\"\<a\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "0", ",", "\"\<b\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "0", ",", "\"\<c\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", "1", ",", "\"\<d\>\""}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Render3dSpan", "[", 
+      RowBox[{
+       RowBox[{"(", GridBox[{
+          {"a"},
+          {"d"},
+          {"g"}
+         }], ")"}], ",", 
+       RowBox[{"(", GridBox[{
+          {"b"},
+          {"e"},
+          {"h"}
+         }], ")"}], ",", 
+       RowBox[{"(", GridBox[{
+          {"c"},
+          {"f"},
+          {"i"}
+         }], ")"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"e", ",", "1"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1"}], "}"}], ",", 
+     RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"GridTransform", "[", 
+      RowBox[{
+       RowBox[{"identity", "-", 
+        RowBox[{"0.02", "i", 
+         RowBox[{"(", 
+          RowBox[{"identity", "-", 
+           RowBox[{"(", GridBox[{
+              {"0", "1"},
+              {
+               RowBox[{"-", "1"}], "0"}
+             }], ")"}]}], ")"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"2", ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", 
+           RowBox[{"-", "0.5"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", 
+           RowBox[{"-", "2"}]}], "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Green", ",", " ", "Brown", ",", "Yellow", ",", "Black"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "50"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"GridTransform3d", "[", 
+      RowBox[{
+       RowBox[{"Identity3", "-", 
+        RowBox[{"0.02", "i", 
+         RowBox[{"(", 
+          RowBox[{"Identity3", "-", 
+           TagBox[
+            RowBox[{"(", "\[NoBreak]", GridBox[{
+               {"1", "0", "1"},
+               {"0", "1", "0"},
+               {"1", "0", "1"}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.7]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}], "\[NoBreak]", ")"}],
+            Function[BoxForm`e$, 
+             MatrixForm[BoxForm`e$]]]}], ")"}]}]}], ",", "b1", ",", "b2", ",",
+        "b3", ",", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "0", ",", "1"}], "}"}], "}"}], ",", 
+       RowBox[{"{", "Brown", "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "6"}], ",", "6"}], "}"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", " ", "Large"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "50"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.813758340660833*^9, 3.813758528615056*^9}, {
+  3.8137586852120256`*^9, 3.8137586869952555`*^9}, {3.8137587243622646`*^9, 
+  3.8137587477712245`*^9}, {3.813759600951316*^9, 3.8137596052282147`*^9}},
+ CellLabel->
+  "In[519]:=",ExpressionUUID->"41137871-6de7-4441-916e-ffeb6ef90f08"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i$$], 1, "scalar"}, -2, 4}}, Typeset`size$$ = {
+    576., {268., 272.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`i$30828$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$30828$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`RenderVectors3dRed[{$CellContext`i$$ {{3}, {0.5}, {
+            0}}}, {{-6, 6}, {-6, 6}, {-2, 6}}], ImageSize -> Large], 
+      "Specifications" :> {{{$CellContext`i$$, 1, "scalar"}, -2, 4}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {314., 320.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`RenderVectors3dRed[
+         Pattern[$CellContext`vlist, 
+          Blank[]], 
+         Optional[
+          Pattern[$CellContext`plotrange, 
+           Blank[]], {{-3, 3}, {-3, 3}, {-3, 3}}]] := Graphics3D[
+         Map[$CellContext`Make3dColorArrow[Red, 
+           $CellContext`T[#]]& , $CellContext`vlist], Axes -> {True, True}, 
+         PlotRange -> $CellContext`plotrange, AxesOrigin -> {0, 0, 0}, Boxed -> 
+         False], $CellContext`Make3dColorArrow[
+         Pattern[$CellContext`c, 
+          Blank[]], 
+         Pattern[$CellContext`v, 
+          Blank[]]] := {
+         Opacity[0.5], $CellContext`c, Thick, 
+         $CellContext`Make3dArrow[$CellContext`v]}, $CellContext`Make3dArrow[
+         Pattern[$CellContext`v, 
+          Blank[]]] := Arrow[
+         Tube[{$CellContext`origin3d, $CellContext`v}]], \
+$CellContext`origin3d = {0, 0, 0}, $CellContext`T[
+         Pattern[$CellContext`v, 
+          Blank[]]] := Flatten[
+         Transpose[$CellContext`v]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8137596084815288`*^9},
+ CellLabel->
+  "Out[572]=",ExpressionUUID->"2abb0840-40fc-46dd-9859-4239121fc591"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i$$], 1, "scalar"}, -2, 4}}, Typeset`size$$ = {
+    576., {99., 104.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i$30847$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$30847$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`RenderVectorsRed[{$CellContext`i$$ {{3}, {0.5}}}, {{-6, 
+         6}, {-2, 2}}], ImageSize -> Large], 
+      "Specifications" :> {{{$CellContext`i$$, 1, "scalar"}, -2, 4}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {146., 152.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.813759608674014*^9},
+ CellLabel->
+  "Out[573]=",ExpressionUUID->"9d23dab1-cfed-49bc-af2d-c775281f2f45"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1, "ihat coef"}, -3, 3}, {{
+       Hold[$CellContext`b$$], 1, "jhat coef"}, -3, 3}}, Typeset`size$$ = {
+    360., {179., 185.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$30881$$ = 
+    0, $CellContext`b$30882$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$30881$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$30882$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`VectorAddRender[$CellContext`a$$ {{1}, {
+         0}}, $CellContext`b$$ {{0}, {1}}, {{-3, 3}, {-3, 3}}], 
+      "Specifications" :> {{{$CellContext`a$$, 1, "ihat coef"}, -3, 
+         3}, {{$CellContext`b$$, 1, "jhat coef"}, -3, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {240., 246.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.813759608752804*^9},
+ CellLabel->
+  "Out[574]=",ExpressionUUID->"01e53216-c376-433a-a6f9-b4d7a462e41f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 
+    1, $CellContext`c$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1, "ihat coef"}, -3, 3}, {{
+       Hold[$CellContext`b$$], 1, "jhat coef"}, -3, 3}, {{
+       Hold[$CellContext`c$$], 1, "khat coef"}, -3, 3}}, Typeset`size$$ = {
+    576., {310., 315.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$30914$$ = 
+    0, $CellContext`b$30915$$ = 0, $CellContext`c$30916$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 
+        1, $CellContext`c$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$30914$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$30915$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$30916$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`VectorTripleAddRender3d[$CellContext`a$$ {{1}, {0}, {
+          0}}, $CellContext`b$$ {{0}, {1}, {0}}, $CellContext`c$$ {{0}, {0}, {
+          1}}, {{-2, 2}, {-2, 2}, {-2, 2}}], ImageSize -> Large], 
+      "Specifications" :> {{{$CellContext`a$$, 1, "ihat coef"}, -3, 
+         3}, {{$CellContext`b$$, 1, "jhat coef"}, -3, 
+         3}, {{$CellContext`c$$, 1, "khat coef"}, -3, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {385., 391.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.813759608878502*^9},
+ CellLabel->
+  "Out[575]=",ExpressionUUID->"931533e6-1798-42e1-9b48-ff28e3659739"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 
+    0, $CellContext`c$$ = 0, $CellContext`d$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1, "a"}, -3, 3}, {{
+       Hold[$CellContext`b$$], 0, "b"}, -3, 3}, {{
+       Hold[$CellContext`c$$], 0, "c"}, -3, 3}, {{
+       Hold[$CellContext`d$$], 1, "d"}, -3, 3}}, Typeset`size$$ = {
+    576., {285., 290.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$30954$$ = 
+    0, $CellContext`b$30955$$ = 0, $CellContext`c$30956$$ = 
+    0, $CellContext`d$30957$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 
+        0, $CellContext`c$$ = 0, $CellContext`d$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$30954$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$30955$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$30956$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$30957$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`RenderSpan[{{$CellContext`a$$}, {$CellContext`c$$}}, \
+{{$CellContext`b$$}, {$CellContext`d$$}}], ImageSize -> Large], 
+      "Specifications" :> {{{$CellContext`a$$, 1, "a"}, -3, 
+         3}, {{$CellContext`b$$, 0, "b"}, -3, 
+         3}, {{$CellContext`c$$, 0, "c"}, -3, 
+         3}, {{$CellContext`d$$, 1, "d"}, -3, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {374., 380.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8137596090639725`*^9},
+ CellLabel->
+  "Out[576]=",ExpressionUUID->"8431540c-10d0-4475-95ef-79d84535b60d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 
+    0, $CellContext`c$$ = 0, $CellContext`d$$ = 0, $CellContext`e$$ = 
+    1, $CellContext`f$$ = 0, $CellContext`g$$ = 0, $CellContext`h$$ = 
+    0, $CellContext`i$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1}, -3, 3}, {{
+       Hold[$CellContext`b$$], 0}, -3, 3}, {{
+       Hold[$CellContext`c$$], 0}, -3, 3}, {{
+       Hold[$CellContext`d$$], 0}, -3, 3}, {{
+       Hold[$CellContext`e$$], 1}, -3, 3}, {{
+       Hold[$CellContext`f$$], 0}, -3, 3}, {{
+       Hold[$CellContext`g$$], 0}, -3, 3}, {{
+       Hold[$CellContext`h$$], 0}, -3, 3}, {{
+       Hold[$CellContext`i$$], 1}, -3, 3}}, Typeset`size$$ = {
+    576., {310., 315.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$31001$$ = 
+    0, $CellContext`b$31002$$ = 0, $CellContext`c$31003$$ = 
+    0, $CellContext`d$31004$$ = 0, $CellContext`e$31005$$ = 
+    0, $CellContext`f$31006$$ = 0, $CellContext`g$31007$$ = 
+    0, $CellContext`h$31008$$ = 0, $CellContext`i$31009$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 
+        0, $CellContext`c$$ = 0, $CellContext`d$$ = 0, $CellContext`e$$ = 
+        1, $CellContext`f$$ = 0, $CellContext`g$$ = 0, $CellContext`h$$ = 
+        0, $CellContext`i$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$31001$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$31002$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$31003$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$31004$$, 0], 
+        Hold[$CellContext`e$$, $CellContext`e$31005$$, 0], 
+        Hold[$CellContext`f$$, $CellContext`f$31006$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$31007$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$31008$$, 0], 
+        Hold[$CellContext`i$$, $CellContext`i$31009$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`Render3dSpan[{{$CellContext`a$$}, {$CellContext`d$$}, \
+{$CellContext`g$$}}, {{$CellContext`b$$}, {$CellContext`e$$}, \
+{$CellContext`h$$}}, {{$CellContext`c$$}, {$CellContext`f$$}, \
+{$CellContext`i$$}}], ImageSize -> Large], 
+      "Specifications" :> {{{$CellContext`a$$, 1}, -3, 
+         3}, {{$CellContext`b$$, 0}, -3, 3}, {{$CellContext`c$$, 0}, -3, 
+         3}, {{$CellContext`d$$, 0}, -3, 3}, {{$CellContext`e$$, 1}, -3, 
+         3}, {{$CellContext`f$$, 0}, -3, 3}, {{$CellContext`g$$, 0}, -3, 
+         3}, {{$CellContext`h$$, 0}, -3, 3}, {{$CellContext`i$$, 1}, -3, 3}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{856., {341., 347.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8137596093133373`*^9},
+ CellLabel->
+  "Out[577]=",ExpressionUUID->"f4989b4d-a409-4a28-a606-120c0b4a0692"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 0, 50}}, Typeset`size$$ = {576., {287., 293.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`i$31075$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$31075$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`GridTransform[$CellContext`identity - 
+         0.02 $CellContext`i$$ ($CellContext`identity - {{0, 1}, {-1, 0}}), {
+         1, 0}, {0, 1}, {{1, 1}, {2, 1}, {-2, -0.5}, {1, -2}}, {
+         Green, Brown, Yellow, Black}, {{-4, 4}, {-4, 4}}], ImageSize -> 
+        Large], "Specifications" :> {{$CellContext`i$$, 0, 50}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {334., 340.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8137596098957505`*^9},
+ CellLabel->
+  "Out[578]=",ExpressionUUID->"51875ba0-8ca6-4138-af8c-9fae7d24e22a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 0, 50}}, Typeset`size$$ = {576., {314., 318.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`i$31119$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$31119$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        $CellContext`GridTransform3d[$CellContext`Identity3 - 
+         0.02 $CellContext`i$$ ($CellContext`Identity3 - {{1, 0, 1}, {0, 1, 
+          0}, {1, 0, 
+          1}}), $CellContext`b1, $CellContext`b2, $CellContext`b3, {{2, 0, 
+         1}}, {Brown}, {{-6, 6}, {-6, 6}, {-6, 6}}], ImageSize -> Large], 
+      "Specifications" :> {{$CellContext`i$$, 0, 50}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {360., 366.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8137596100682898`*^9},
+ CellLabel->
+  "Out[579]=",ExpressionUUID->"7f64f55d-7825-4fdc-9243-03958d7eff4b"]
+}, Open  ]]
+},
+WindowSize->{958, 994},
+WindowMargins->{{Automatic, -7}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 45596, 1391, 2602, "Input",ExpressionUUID->"41137871-6de7-4441-916e-ffeb6ef90f08"],
+Cell[46179, 1415, 2834, 59, 653, "Output",ExpressionUUID->"2abb0840-40fc-46dd-9859-4239121fc591"],
+Cell[49016, 1476, 1769, 36, 317, "Output",ExpressionUUID->"9d23dab1-cfed-49bc-af2d-c775281f2f45"],
+Cell[50788, 1514, 2030, 41, 505, "Output",ExpressionUUID->"01e53216-c376-433a-a6f9-b4d7a462e41f"],
+Cell[52821, 1557, 2384, 46, 795, "Output",ExpressionUUID->"931533e6-1798-42e1-9b48-ff28e3659739"],
+Cell[55208, 1605, 2493, 49, 773, "Output",ExpressionUUID->"8431540c-10d0-4475-95ef-79d84535b60d"],
+Cell[57704, 1656, 3659, 68, 707, "Output",ExpressionUUID->"f4989b4d-a409-4a28-a606-120c0b4a0692"],
+Cell[61366, 1726, 1904, 38, 693, "Output",ExpressionUUID->"51875ba0-8ca6-4138-af8c-9fae7d24e22a"],
+Cell[63273, 1766, 1930, 39, 745, "Output",ExpressionUUID->"7f64f55d-7825-4fdc-9243-03958d7eff4b"]
+}, Open  ]]
+}
+]
+*)
+
